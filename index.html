@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Untuk Kamu 💖</title>
+  <style>
+    body {
+      background-color: #fbf5f6;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 50px;
+      color: #232426;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      background-color: #000000;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #000000;
+    }
+
+    #pesanRahasia {
+      margin-top: 30px;
+      font-size: 22px;
+      display: none;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .hati {
+      position: fixed;
+      font-size: 20px;
+      animation: jatuh 4s linear infinite;
+      color: #444; /*abu untuk animasi hati */
+    }
+
+    @keyframes jatuh {
+      0% { transform: translateY(-100px) rotate(0); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Buleettt Akuuuu 🥳</h1>
+  <p>Coba deh kamu pencet tombolnya...</p>
+
+  <button onclick="tampilkanPesan()">Klik di sini</button>
+
+  <p id="pesanRahasia">Aku Sayang Banget Sama Kamuu. 💕<br>
+  Makasih ya bulett udah perhatian terus sama akuuu. 💕</p>
+
+  <script>
+    function tampilkanPesan() {
+      document.getElementById("pesanRahasia").style.display = "block";
+      munculkanHati();
+    }
+
+    function munculkanHati() {
+      for (let i = 0; i < 20; i++) {
+        const hati = document.createElement("div");
+        hati.classList.add("hati");
+        hati.style.left = Math.random() * 100 + "vw";
+        hati.style.animationDuration = (Math.random() * 2 + 3) + "s";
+        hati.textContent = "💖";
+        document.body.appendChild(hati);
+
+        setTimeout(() => {
+          hati.remove();
+        }, 5000);
+      }
+    }
+  </script>
+
+</body>
+</html>
